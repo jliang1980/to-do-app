@@ -17,24 +17,22 @@ function onReady(){
 		newLi.textContent = title;
 		// attach the checkbox to the li
 		newLi.appendChild(checkbox);
-		
 		// attach the li to the ul
 		toDoList.appendChild(newLi);
 		//empty the input
 		newToDoText.value = '';
-		let deleteBtn = document.createElement('button');
+		
+    let deleteBtn = document.createElement('button');
 		deleteBtn.textContent = Delete;
 		newLi.appendChild(deleteBtn);
-
-		})
-
-
-		}
+		deleteBtn.addEventListener('click', function(event){
+		toDoList.removeChild(this.parentElement);
+		});
 		
-	
+		
+}
 
 window.onload = function(){
 	alert("The window has loaded!");
 	onReady();
 };
-
